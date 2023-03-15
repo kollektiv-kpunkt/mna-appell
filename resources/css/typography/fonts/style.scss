@@ -1,0 +1,43 @@
+@import "./icofont.scss";
+
+@font-face {
+    font-family: "ObjectSans";
+    font-weight: 400;
+    font-style: normal;
+    src: url("@fonts/PPObjectSans-Regular.woff") format("woff"), url("@fonts/PPObjectSans-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "ObjectSans";
+    font-weight: 700;
+    font-style: normal;
+    src: url("@fonts/PPObjectSans-Bold.woff") format("woff"), url("@fonts/PPObjectSans-Bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "ObjectSans";
+    font-weight: 900;
+    font-style: normal;
+    src: url("@fonts/PPObjectSans-Heavy.woff") format("woff"), url("@fonts/PPObjectSans-Heavy.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "ObjectSans";
+    font-weight: 400;
+    font-style: italic;
+    src: url("@fonts/PPObjectSans-Slanted.woff") format("woff"), url("@fonts/PPObjectSans-Slanted.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "ObjectSans";
+    font-weight: 700;
+    font-style: italic;
+    src: url("@fonts/PPObjectSans-BoldSlanted.woff") format("woff"), url("@fonts/PPObjectSans-BoldSlanted.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "ObjectSans";
+    font-weight: 900;
+    font-style: italic;
+    src: url("@fonts/PPObjectSans-HeavySlanted.woff") format("woff"), url("@fonts/PPObjectSans-HeavySlanted.woff2") format("woff2");
+}

@@ -1,0 +1,26 @@
+@import "./fonts/style.scss";
+
+html {
+    font-size: clamp(15px, 1.15741vw, 23px);
+    font-family: "ObjectSans", sans-serif;
+}
+
+
+p+p {
+    margin-top: 1em;
+}
+
+.mna-button {
+    padding: 0.75em 1.5em;
+    --bg-color: theme("colors.primary");
+    --text-color: theme("colors.secondary");
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-weight: 700;
+    @apply leading-none text-center;
+
+    &.mna-button-neg {
+        --bg-color: theme("colors.secondary");
+        --text-color: theme("colors.primary");
+    }
+}
