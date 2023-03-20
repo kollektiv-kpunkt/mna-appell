@@ -44,7 +44,8 @@ class SupporterController extends Controller
             'email' => 'required|email',
             'city' => 'required',
             'zip' => 'required',
-            "source" => ""
+            "source" => "",
+            "public" => ""
         ]);
         try {
             $supporter = new Supporter();
