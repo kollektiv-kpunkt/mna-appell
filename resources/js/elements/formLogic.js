@@ -2,19 +2,21 @@ if (document.querySelector(".mna-supporter-form")) {
     document.querySelector(".mna-supporter-form").addEventListener("submit", async function (e) {
         e.preventDefault();
         const loader = createLoader();
-        var form = document.querySelector(".mna-supporter-form");
-        var formData = new FormData(form);
-        var response = await fetch(form.action, {
-            method: "POST",
-            body: formData,
-        });
-        var data = await response.json();
-        console.log(data)
-        if (data.success) {
-            form.closest(".mna-form-step").remove();
-            document.querySelector(".mna-form-step.mna-form-thanks").style.display = "block";
-        }
-        removeLoader(loader);
+        setTimeout(async () => {
+            var form = document.querySelector(".mna-supporter-form");
+            var formData = new FormData(form);
+            var response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+            });
+            var data = await response.json();
+            console.log(data)
+            if (data.success) {
+                form.closest(".mna-form-step").remove();
+                document.querySelector(".mna-form-step.mna-form-thanks").style.display = "block";
+            }
+            removeLoader(loader);
+        }, 750);
     });
 }
 
@@ -37,4 +39,24 @@ if (document.querySelector(".mna-open-signup-form")) {
             openButton.innerHTML = `Schließen <i class="icofont-close"></i>`;
         }
     });
+}
+
+const createLoader = () => {
+    let loader = document.createElement("div");
+    loader.classList.add("mna-form-loader");
+    loader.innerHTML = `
+  <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  `;
+    document.body.appendChild(loader);
+    setTimeout(() => {
+        loader.style.opacity = 1;
+    }, 100);
+    return loader;
+}
+
+const removeLoader = (loader) => {
+    loader.style.opacity = 0;
+    setTimeout(() => {
+        loader.remove();
+    }, 500);
 }

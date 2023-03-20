@@ -38,15 +38,16 @@ class SupporterController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
             'city' => 'required',
             'zip' => 'required',
+            "source" => ""
         ]);
         try {
             $supporter = new Supporter();
-            $supporter->fill($request->all());
+            $supporter->fill($validated);
             $supporter->hash = Str::random(64);
             $supporter->save();
             $response = [

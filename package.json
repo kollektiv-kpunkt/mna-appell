@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "dev": "vite --host",
+        "dev": "find . -name '*:Zone.Identifier' -type f -delete && vite --host",
         "build": "vite build"
     },
     "devDependencies": {
