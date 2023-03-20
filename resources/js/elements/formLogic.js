@@ -1,6 +1,7 @@
 if (document.querySelector(".mna-supporter-form")) {
     document.querySelector(".mna-supporter-form").addEventListener("submit", async function (e) {
         e.preventDefault();
+        const loader = createLoader();
         var form = document.querySelector(".mna-supporter-form");
         var formData = new FormData(form);
         var response = await fetch(form.action, {
@@ -13,6 +14,7 @@ if (document.querySelector(".mna-supporter-form")) {
             form.closest(".mna-form-step").remove();
             document.querySelector(".mna-form-step.mna-form-thanks").style.display = "block";
         }
+        removeLoader(loader);
     });
 }
 

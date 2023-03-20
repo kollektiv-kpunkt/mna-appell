@@ -15,6 +15,11 @@ use App\Http\Controllers\SupporterController;
 */
 
 Route::get('/', function () {
+    if (session("source")) {
+        cookie()->queue(cookie("source", session("source"), 60 * 24));
+    } else if (cookie("source")) {
+        session()->put("source", request()->cookie("source"));
+    }
     $supporters = \App\Models\Supporter::where('enabled', true)->where("public", true)->get();
     return view('home', [
         'supporters' => $supporters
@@ -28,4 +33,8 @@ Route::get("/verify/{hash}", function($hash) {
     return view("verify", [
         "success" => $status
     ]);
+});
+
+Route::get("/s/{orga}", function($orga) {
+    return redirect()->route("home")->with("source", $orga);
 });

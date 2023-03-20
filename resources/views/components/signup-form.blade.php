@@ -44,6 +44,7 @@
                     <input id="optin" name="optin" type="checkbox" class="form-input mr-2" checked value="1" />
                     <label for="optin" class="block text-xs w-full">Ich bin einverstanden, dass mich das Komitee auf den Laufenden hält.</label>
                 </div>
+                <input type="hidden" name="source" value="{{ session("source") }}">
                 <button type="submit" class="mt-4 bg-primary w-full p-2 font-bold text-secondary" onclick="">Absenden</button>
             </form>
         </div>
