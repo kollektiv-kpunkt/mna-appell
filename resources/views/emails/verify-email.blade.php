@@ -1,11 +1,11 @@
 <x-email-layout>
     <x-slot:subject>
-        Danke für Ihre Unterstützung, {{$supporter->name}}!
+        Bitte bestätigen Sie Ihre E-Mail Adresse
     </x-slot:subject>
 
     <p style="font-weight: bold; font-size: 2rem; margin-bottom: 0.25em; color: #8000FF">Liebe:r {{$supporter->name}}</p>
-    <p>Danke für Ihre Unterstützung! BLA BLA BLA BLA BLA</p>
-    <p>Damit wir Ihren Namen auf unserer Webseite anzeigen können, wären wir Ihnen dankbar, wenn Sie <a href="{{url("/verify/{$supporter->hash}")}}">Ihre E-Mail Adresse bestätigen</a>.</p>
+    <p>Vielen Dank für Ihre Unterstützung für eine kindgerechte Betreuung jugendlicher Geflüchteter.</p>
+    <p>Bitte bestätigen Sie Ihre Unterschrift <b>indem Sie auf den violetten Knopf unten klicken.</b> Nur so können wir Ihren Namen der Liste der Unterzeichner:innen hinzufügen.</p>
     <x-email-button>
         <x-slot:link>
             {{url("/verify/{$supporter->hash}")}}
@@ -14,7 +14,7 @@
     </x-email-button>
     <p>Vielen Dank!</p>
     <p>
-        <b>Das Komitee "Keine Kinder zweiter Klasse"</b><br>
+        <b>Das Netzwerk «kindgerechte Betreuung jugendlicher Geflüchteter»</b><br>
         <a href="https://www.keine-kinder-zweiter-klasse.ch">www.keine-kinder-zweiter-klasse.ch</a>
     </p>
 </x-email-layout>

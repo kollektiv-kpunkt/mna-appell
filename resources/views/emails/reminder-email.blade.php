@@ -14,7 +14,7 @@
     </x-email-button>
     <p>Vielen Dank für Ihre Unterstützung!</p>
     <p>
-        <b>Das Komitee "Keine Kinder zweiter Klasse"</b><br>
+        <b>Das Netzwerk «kindgerechte Betreuung jugendlicher Geflüchteter»</b><br>
         <a href="https://www.keine-kinder-zweiter-klasse.ch">www.keine-kinder-zweiter-klasse.ch</a>
     </p>
 </x-email-layout>

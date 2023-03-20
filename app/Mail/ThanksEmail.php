@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Queue\SerializesModels;
 
-class VerifyEmail extends Mailable
+class ThanksEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -32,7 +32,7 @@ class VerifyEmail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: "Bitte bestätigen Sie Ihre E-Mail Adresse",
+            subject: "Danke für Ihre Unterstützung, {$this->supporter->name}!",
             from: new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'))
         );
     }
@@ -45,7 +45,7 @@ class VerifyEmail extends Mailable
     public function content()
     {
         return new Content(
-            view: 'emails.verify-email',
+            view: 'emails.thanks-email',
             with: [
                 'supporter' => $this->supporter,
             ]
