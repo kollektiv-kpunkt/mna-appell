@@ -44,6 +44,7 @@ class SupporterController extends Controller
             'email' => 'required|email',
             'city' => 'required',
             'zip' => 'required',
+            "details" => "",
             "source" => "",
             "public" => ""
         ]);
