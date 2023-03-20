@@ -1,6 +1,7 @@
 <?php
 
 $orgas = glob(public_path('images/organizations/*{jpg,png,gif,svg}'), GLOB_BRACE);
+asort($orgas);
 $orgas = array_map(function($orga) {
     $orga = basename($orga);
     return [
