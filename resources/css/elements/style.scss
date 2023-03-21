@@ -222,16 +222,19 @@
 // Orgas
 .mna-organizations {
     --columns: 5;
-    --gap: 1rem;
+    --gap: 2rem;
     --width: calc(100% / var(--columns) - var(--gap) * (var(--columns) - 1) / var(--columns));
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: var(--gap);
 
     img {
         width: var(--width);
         height: var(--width);
         object-fit: cover;
+        object-position: center;
     }
 
     @media (max-width: 1080px) {
