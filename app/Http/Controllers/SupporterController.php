@@ -67,6 +67,7 @@ class SupporterController extends Controller
             $supporter = new Supporter();
             $supporter->fill($validated);
             $supporter->hash = Str::random(64);
+            $supporter->enabled = true;
             $supporter->save();
             $response = [
                 "success" => true
@@ -79,28 +80,15 @@ class SupporterController extends Controller
             return response()->json($response);
             exit;
         }
-        if (isset($request->all()["public"]) && $request->all()["public"] == 1) {
-            try {
-                Mail::to($supporter->email)->send(new VerifyEmail($supporter));
-            } catch (\Exception $e) {
-                $response = [
-                    "success" => false,
-                    "error" => $e->getMessage()
-                ];
-                return response()->json($response);
-                exit;
-            }
-        } else {
-            try {
-                Mail::to($supporter->email)->send(new ThanksEmail($supporter));
-            } catch (\Exception $e) {
-                $response = [
-                    "success" => false,
-                    "error" => $e->getMessage()
-                ];
-                return response()->json($response);
-                exit;
-            }
+        try {
+            Mail::to($supporter->email)->send(new ThanksEmail($supporter));
+        } catch (\Exception $e) {
+            $response = [
+                "success" => false,
+                "error" => $e->getMessage()
+            ];
+            return response()->json($response);
+            exit;
         }
         return response()->json($response);
     }
