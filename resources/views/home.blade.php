@@ -14,19 +14,24 @@
             <h2 class="text-2xl md:text-4xl font-black text-primary mb-6">Unsere Unterstützer:innen</h2>
             <x-testimonials />
             <x-organizations />
-            <div class="mna-supporters text-xs">
-                @foreach ($supporters as $supporter)
-                    <?php
-                    $content = "<b>{$supporter->name},</b> {$supporter->city} ({$supporter->zip})";
-                    if ($supporter->details) {
-                        $content .= ", {$supporter->details}";
-                    }
-                    if (!$loop->last) {
-                        $content .= '; ';
-                    }
-                    ?>
-                    {!! $content !!}
-                @endforeach
+            <div class="mna-supporters-outer relative">
+                <div class="mna-supporters text-xs<?= ($supportersTotal > 100) ? " mna-supporters--long" : "" ?>">
+                    @foreach ($supporters as $supporter)
+                        <?php
+                        $content = "<b>{$supporter->name},</b> {$supporter->city} ({$supporter->zip})";
+                        if ($supporter->details) {
+                            $content .= ", {$supporter->details}";
+                        }
+                        if (!$loop->last) {
+                            $content .= '; ';
+                        }
+                        ?>
+                        {!! $content !!}
+                    @endforeach
+                </div>
+                @if ($supportersTotal > 100)
+                    <span class="mna-supporters__more absolute bottom-0 underline text-primary cursor-pointer">{{$supportersTotal - 100}} weitere Unterstützer:innen anzeigen</span>
+                @endif
             </div>
         </div>
     </div>

@@ -20,9 +20,11 @@ Route::get('/', function () {
     } else if (cookie("source")) {
         session()->put("source", request()->cookie("source"));
     }
-    $supporters = \App\Models\Supporter::where('enabled', true)->where("public", true)->get();
+    $supporters = \App\Models\Supporter::where('enabled', true)->where("public", true)->take(100)->get();
+    $supportersTotal = \App\Models\Supporter::where('enabled', true)->where("public", true)->count();
     return view('home', [
-        'supporters' => $supporters
+        'supporters' => $supporters,
+        'supportersTotal' => $supportersTotal
     ]);
 })->name('home');
 

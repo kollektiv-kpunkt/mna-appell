@@ -18,7 +18,21 @@ class SupporterController extends Controller
      */
     public function index()
     {
-        //
+        $supporters = Supporter::where('enabled', true)->where("public", true)->get();
+        $markup = "";
+        $i = 0;
+        foreach ($supporters as $supporter) {
+            $content = "<b>{$supporter->name},</b> {$supporter->city} ({$supporter->zip})";
+            if ($supporter->details) {
+                $content .= ", {$supporter->details}";
+            }
+            if ($i < count($supporters) - 1) {
+                $content .= '; ';
+            }
+            $markup .= $content;
+            $i++;
+        }
+        return $markup;
     }
 
     /**
