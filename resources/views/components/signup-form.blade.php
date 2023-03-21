@@ -2,7 +2,7 @@
     <button class="mna-open-signup-form text-xl w-full text-center p-2 bg-primary text-secondary font-bold mb-2 border-2 border-secondary">Unterschreiben <i class="icofont-pencil"></i></button>
     <div class="mna-signup-form-wrapper w-full bg-secondary text-primary p-8 border-white border-4 border-solid shadow-2xl">
         <div class="mna-form-step">
-            <h2 class="font-black text-2xl md:text-4xl leading-none">Unterschreiben Sie unseren Brief!</h2>
+            <h2 class="font-black text-2xl md:text-4xl leading-none">Unterschreiben Sie unseren Appell!</h2>
             <p class="mt-3">Unterstützen Sie diesen Appell mit Ihrer Unterschrift - damit geflüchtete Minderjährige im Kanton Zürich nicht länger wie Kinder zweiter Klasse behandelt werden.</p>
             <form action="/supporters" method="POST" class="mna-supporter-form">
                 @csrf
@@ -50,8 +50,7 @@
         </div>
         <div class="mna-form-step mna-form-thanks hidden">
             <h2 class="font-black text-2xl md:text-4xl leading-none">Vielen Dank für Ihre Unterschrift!</h2>
-            <p class="mt-3">Vielen Dank für Ihre Unterstützung. Wir haben Ihnen soeben eine E-Mail geschickt. <b>Bitte bestätigen Sie ihre Adresse, indem Sie auf den Link im E-Mail klicken.</b></p>
-            <p>Teilen Sie diesen Appell mit Ihrem Umfeld, damit wir den Druck auf den Regierungsrat erhöhen können!</p>
+            <p class="mt-3">Vielen Dank, dass Sie sich für eine kindgerechte Betreuung von jugendlichen Geflüchteten einsetzen. <b>Je mehr Menschen den öffentlichen Appell unterzeichnen, desto eher werden unsere Forderungen gehört.</b> Können Sie darum den Appell mit Ihrem Umfeld teilen?</p>
             <div class="mna-share-buttons flex flex-wrap gap-4 mt-4" data-share-url="{{url()->current()}}"
                 data-share-text="{{
                     urlencode("Hallo 👋

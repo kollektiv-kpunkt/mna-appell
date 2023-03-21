@@ -28,6 +28,10 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
+Route::get('/hintergrund', function () {
+    return view('hintergrund');
+})->name('hintergrund');
+
 Route::resource('supporters', SupporterController::class);
 
 Route::get("/verify/{hash}", function($hash) {

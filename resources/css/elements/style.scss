@@ -304,3 +304,22 @@
         margin-bottom: 1rem;
     }
 }
+
+// Document Viewer
+.mna-pdf-viewer {
+    width: 100%;
+    height: auto;
+    padding-bottom: calc(100% / 16 * 9);
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    @media (max-width: 780px) {
+        padding-bottom: 100%;
+    }
+}
