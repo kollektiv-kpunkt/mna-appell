@@ -60,7 +60,8 @@ class SupporterController extends Controller
             'zip' => 'required',
             "details" => "",
             "source" => "",
-            "public" => ""
+            "public" => "",
+            "optin" => ""
         ]);
         try {
             $supporter = new Supporter();
