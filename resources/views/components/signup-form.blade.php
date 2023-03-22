@@ -7,7 +7,7 @@
             <form action="/supporters" method="POST" class="mna-supporter-form">
                 @csrf
                 <div class="mt-4">
-                    <label for="name" class="block text-xs font-bold">Name</label>
+                    <label for="name" class="block text-xs font-bold">Vor- und Nachname</label>
                     <div class="mt-1 shadow-lg border border-primary border-opacity-50">
                         <input id="name" name="name" type="text" class="form-input block w-full" required/>
                     </div>
