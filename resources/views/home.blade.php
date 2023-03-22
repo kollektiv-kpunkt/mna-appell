@@ -14,8 +14,10 @@
             <h2 class="text-2xl md:text-4xl font-black text-primary mb-6">Unsere Unterstützer:innen</h2>
             <x-testimonials />
             <x-organizations />
+            <x-prime-supporters />
+            <a href="/hintergrund" class="my-8 bg-primary w-fit block p-2 font-bold text-secondary">Hintergrundinformationen</a>
             <div class="mna-supporters-outer relative">
-                <div class="mna-supporters text-xs<?= ($supportersTotal > 100) ? " mna-supporters--long" : "" ?>">
+                <div class="mna-supporters text-xs<?= ($supportersTotal > 75) ? " mna-supporters--long" : "" ?>">
                     @foreach ($supporters as $supporter)
                         <?php
                         $content = "<b>{$supporter->name},</b> {$supporter->city} ({$supporter->zip})";
@@ -29,8 +31,8 @@
                         {!! $content !!}
                     @endforeach
                 </div>
-                @if ($supportersTotal > 100)
-                    <span class="mna-supporters__more absolute bottom-0 underline text-primary cursor-pointer">{{$supportersTotal - 100}} weitere Unterstützer:innen anzeigen</span>
+                @if ($supportersTotal > 75)
+                    <span class="mna-supporters__more absolute bottom-0 underline text-primary cursor-pointer">{{$supportersTotal - 75}} weitere Unterstützer:innen anzeigen</span>
                 @endif
             </div>
             <a href="/hintergrund" class="mt-12 bg-primary w-fit block text-xs p-2 font-bold text-secondary">Hintergrundinformationen</a>
