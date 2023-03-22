@@ -15,7 +15,7 @@ $testimonials = json_decode(file_get_contents(storage_path('app/testimonials.jso
                         <div class="mna-testimonial-img-content-name font-bold text-primary p-2 w-full text-xl leading-none">{{ $testimonial->name }}</div>
                     </div>
                 </div>
-                <p class="mt-4">{{$testimonial->quote}}</p>
+                <p class="mt-4">«{{$testimonial->quote}}»</p>
                 <p class="font-bold">{{$testimonial->position}}</p>
             </li>
             @endforeach
