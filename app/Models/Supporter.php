@@ -23,6 +23,7 @@ class Supporter extends Model
         "zip",
         "details",
         "optin",
-        "public"
+        "public",
+        "source"
     ];
 }
