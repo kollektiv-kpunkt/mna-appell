@@ -62,12 +62,12 @@ const removeLoader = (loader) => {
 }
 
 
-if (document.querySelector('.mna-button.mna-share')) {
-    const buttons = document.querySelectorAll('.mna-button.mna-share');
-    buttons.forEach(button => {
-        button.addEventListener('click', share(button));
-    });
-}
+// if (document.querySelector('.mna-button.mna-share')) {
+//     const buttons = document.querySelectorAll('.mna-button.mna-share');
+//     buttons.forEach(button => {
+//         button.addEventListener('click', share(button));
+//     });
+// }
 
 
 // function share(e, button) {
