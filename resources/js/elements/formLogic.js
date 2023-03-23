@@ -70,23 +70,23 @@ if (document.querySelector('.mna-button.mna-share')) {
 }
 
 
-function share(e, button) {
-    let type = button.dataset.shareType;
-    let url = button.closest('.mna-share-buttons').dataset.shareUrl;
-    let text = button.closest('.mna-share-buttons').dataset.shareText;
-    let tweet = button.closest('.mna-share-buttons').dataset.shareTweet;
-    switch (type) {
-        case 'facebook':
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
-            break;
-        case 'twitter':
-            window.open(`https://twitter.com/intent/tweet?text=${tweet}&url=${url}`, '_blank');
-            break;
-        case "whatsapp":
-            window.open(`https://api.whatsapp.com/send?text=${text} ${url}`, '_blank');
-            break;
-        case "telegram":
-            window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
-            break;
-    }
-}
+// function share(e, button) {
+//     let type = button.dataset.shareType;
+//     let url = button.closest('.mna-share-buttons').dataset.shareUrl;
+//     let text = button.closest('.mna-share-buttons').dataset.shareText;
+//     let tweet = button.closest('.mna-share-buttons').dataset.shareTweet;
+//     switch (type) {
+//         case 'facebook':
+//             window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+//             break;
+//         case 'twitter':
+//             window.open(`https://twitter.com/intent/tweet?text=${tweet}&url=${url}`, '_blank');
+//             break;
+//         case "whatsapp":
+//             window.open(`https://api.whatsapp.com/send?text=${text} ${url}`, '_blank');
+//             break;
+//         case "telegram":
+//             window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
+//             break;
+//     }
+// }
