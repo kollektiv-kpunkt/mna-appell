@@ -65,13 +65,12 @@ const removeLoader = (loader) => {
 if (document.querySelector('.mna-button.mna-share')) {
     const buttons = document.querySelectorAll('.mna-button.mna-share');
     buttons.forEach(button => {
-        button.addEventListener('click', share(e, button));
+        button.addEventListener('click', share(button));
     });
 }
 
 
 function share(e, button) {
-    e.preventDefault();
     let type = button.dataset.shareType;
     let url = button.closest('.mna-share-buttons').dataset.shareUrl;
     let text = button.closest('.mna-share-buttons').dataset.shareText;
