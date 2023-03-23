@@ -35,7 +35,6 @@
                     <span class="mna-supporters__more absolute bottom-0 underline text-primary cursor-pointer">{{$supportersTotal - 75}} weitere Unterstützer:innen anzeigen</span>
                 @endif
             </div>
-            <a href="/hintergrund" class="mt-12 bg-primary w-fit block text-xs p-2 font-bold text-secondary">Hintergrundinformationen</a>
         </div>
     </div>
     <aside class="mna-form-container">
