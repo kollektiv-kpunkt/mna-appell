@@ -1,3 +1,18 @@
+<?php
+$message = <<<EOD
+Hallo 👋
+Ich habe gerade einen Appell unterzeichnet, in dem ich den Regierungsrat auffordere, endlich menschenwürdige und kindgerechte Betreuungsstrukturen für jugendliche Geflüchtete zu schaffen. Es darf im Kanton Zürich keine Kinder zweiter Klasse geben!
+Unterzeichnest du auch?
+✍️ keine-kinder-zweiter-klasse.ch
+EOD;
+$post = <<<EOD
+Keine Kinder zweiter Klasse! Der Regierungsrat hat die Pflicht, unbegleiteten minderjährigen Geflüchteten eine menschenwürdige und angemessene Betreuungsstruktur zur Verfügung zu stellen.
+Unterzeichne jetzt auch den Appell!
+✍️ keine-kinder-zweiter-klasse.ch
+EOD;
+$url = url("/");
+?>
+
 <div class="mna-signup-form-outer">
     <button class="mna-open-signup-form text-xl w-full text-center p-2 bg-primary text-secondary font-bold mb-2 border-2 border-secondary">Unterschreiben <i class="icofont-pencil"></i></button>
     <div class="mna-signup-form-wrapper w-full bg-secondary text-primary p-8 border-white border-4 border-solid shadow-2xl">
@@ -51,16 +66,12 @@
         <div class="mna-form-step mna-form-thanks hidden">
             <h2 class="font-black text-2xl md:text-4xl leading-none">Vielen Dank für Ihre Unterschrift!</h2>
             <p class="mt-3">Vielen Dank, dass Sie sich für eine kindgerechte Betreuung von jugendlichen Geflüchteten einsetzen. <b>Je mehr Menschen den öffentlichen Appell unterzeichnen, desto eher werden unsere Forderungen gehört.</b> Können Sie darum den Appell mit Ihrem Umfeld teilen?</p>
-            <div class="mna-share-buttons flex flex-wrap gap-4 mt-4" data-share-url="{{url()->current()}}"
+            <div class="mna-share-buttons flex flex-wrap gap-4 mt-4" data-share-url="{{ urlencode($url) }}"
                 data-share-text="{{
-                    urlencode("Hallo 👋
-Ich habe gerade einen Brief unterzeichnet, in dem ich Silvia Steiner dazu auffordere, ihr Stipendiendebakel aufzuräumen. Sie und ihre Bildungsdirektion sind schuld daran, dass unzählige junge Erwachsene in den finanziellen Ruin getrieben werden. Das darf nicht länger sein!
-Unterzeichnest du auch?");
+                    urlencode($message);
                 }}"
                 data-share-tweet="{{
-                    urlencode("Ich fordere @silviasteiner dazu auf, ihr Stipendiendebakel endlich aufzuräumen, denn sie ist schuld daran, dass viele junge Erwachsene in den finanziellen Ruin getrieben werden. Das darf nicht sein!
-Unterzeichnest du auch?
-#Stipendiendebakel");
+                    urlencode($post);
                 }}"
             >
                 <a class="!text-sm mna-button mna-share" data-share-type="whatsapp">Auf WhatsApp teilen</a>
