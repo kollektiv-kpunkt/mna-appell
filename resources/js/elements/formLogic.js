@@ -62,31 +62,32 @@ const removeLoader = (loader) => {
 }
 
 
-// if (document.querySelector('.mna-button.mna-share')) {
-//     const buttons = document.querySelectorAll('.mna-button.mna-share');
-//     buttons.forEach(button => {
-//         button.addEventListener('click', share(button));
-//     });
-// }
+if (document.querySelector('.mna-button.mna-share')) {
+    const buttons = document.querySelectorAll('.mna-button.mna-share');
+    buttons.forEach(button => {
+        button.addEventListener('click', (e) => share(e, button));
+    });
+}
 
 
-// function share(e, button) {
-//     let type = button.dataset.shareType;
-//     let url = button.closest('.mna-share-buttons').dataset.shareUrl;
-//     let text = button.closest('.mna-share-buttons').dataset.shareText;
-//     let tweet = button.closest('.mna-share-buttons').dataset.shareTweet;
-//     switch (type) {
-//         case 'facebook':
-//             window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
-//             break;
-//         case 'twitter':
-//             window.open(`https://twitter.com/intent/tweet?text=${tweet}&url=${url}`, '_blank');
-//             break;
-//         case "whatsapp":
-//             window.open(`https://api.whatsapp.com/send?text=${text} ${url}`, '_blank');
-//             break;
-//         case "telegram":
-//             window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
-//             break;
-//     }
-// }
+function share(e, button) {
+    e.preventDefault();
+    let type = button.dataset.shareType;
+    let url = button.closest('.mna-share-buttons').dataset.shareUrl;
+    let text = button.closest('.mna-share-buttons').dataset.shareText;
+    let tweet = button.closest('.mna-share-buttons').dataset.shareTweet;
+    switch (type) {
+        case 'facebook':
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+            break;
+        case 'twitter':
+            window.open(`https://twitter.com/intent/tweet?text=${tweet}`, '_blank');
+            break;
+        case "whatsapp":
+            window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+            break;
+        case "telegram":
+            window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
+            break;
+    }
+}

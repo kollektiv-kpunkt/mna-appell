@@ -74,10 +74,10 @@ $url = url("/");
                     urlencode($post);
                 }}"
             >
-                <a class="!text-sm mna-button mna-share" data-share-type="whatsapp">Auf WhatsApp teilen</a>
-                <a class="!text-sm mna-button mna-share" data-share-type="telegram">Auf Telegram teilen</a>
-                <a class="!text-sm mna-button mna-share" data-share-type="facebook">Auf Facebook teilen</a>
-                <a class="!text-sm mna-button mna-share" data-share-type="twitter">Auf Twitter teilen</a>
+                <a class="!text-sm mna-button mna-share cursor-pointer" data-share-type="whatsapp">Auf WhatsApp teilen</a>
+                <a class="!text-sm mna-button mna-share cursor-pointer" data-share-type="telegram">Auf Telegram teilen</a>
+                <a class="!text-sm mna-button mna-share cursor-pointer" data-share-type="facebook">Auf Facebook teilen</a>
+                <a class="!text-sm mna-button mna-share cursor-pointer" data-share-type="twitter">Auf Twitter teilen</a>
             </div>
         </div>
     </div>
