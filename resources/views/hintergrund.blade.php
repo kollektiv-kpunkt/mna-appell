@@ -9,6 +9,7 @@
             <p>Weiter haben wir eine Checkliste von Bedingungen erarbeitet, welche im Rahmen einer submissionsrechtlichen Ausschreibung erfüllt sein müssen, um künftige Kindswohlgefährdungen auszuschliessen.</p>
             <p>Wir laden Sie herzlich ein, sich mit uns in Kontakt zu setzen, um weitere Informationen zu erhalten.</p>
             <x-document-reader doc="/media/pdf/20230314Konzeptevaluation Zusammenfassung.finaldocx.pdf" class="my-8"/>
+            <a href="{{url("media/zip/Medienmappe.zip")}}" class="mt-8 bg-primary w-fit block p-2 font-bold text-secondary">Zur Medienmappe</a>
         </div>
     </div>
     <aside class="mna-form-container">
