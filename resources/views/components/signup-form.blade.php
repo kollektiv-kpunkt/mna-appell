@@ -19,7 +19,7 @@ $url = url("/");
         <div class="mna-form-step">
             <h2 class="font-black text-2xl md:text-4xl leading-none">Unterschreiben Sie unseren Appell!</h2>
             <p class="mt-3">Unterstützen Sie diesen Appell mit Ihrer Unterschrift - damit geflüchtete Minderjährige im Kanton Zürich nicht länger wie Kinder zweiter Klasse behandelt werden.</p>
-            <p class="text-xs">Bereits {{\App\Models\Supporter::where('enabled', true)->count()}} Personen haben unseren Brief unterschrieben!</p>
+            <p class="text-xs">Bereits <b>{{\App\Models\Supporter::where('enabled', true)->count()}} Personen</b> haben unseren Brief unterschrieben!</p>
             <form action="/supporters" method="POST" class="mna-supporter-form">
                 @csrf
                 <div class="mt-4">
