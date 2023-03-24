@@ -11,7 +11,7 @@
             <p><a class="underline text-primary" href="{{url("/media/pdf/White-Paper%20finale%20Fassung%202023-2.pdf")}}" target="_blank" rel="norefferer">In einem umfassenden öffentlichen Papier</a> stellen wir erprobte Modelle für die Betreuung geflüchteter Jugendlicher und deren Begleitung in die Selbständigkeit vor.</p>
             <p>Damit diese erfolgreichen Modelle auch im Kanton Zürich zum Zug kommen, muss das kantonale Betreuungs-, Begleitungs- und Unterbringungssystem geflüchteter Jugendlicher neu organisiert und finanziert werden.</p>
             <x-demands />
-            <h2 class="text-2xl md:text-4xl font-black text-primary mb-6">Unsere Unterstützer:innen</h2>
+            <h2 class="text-2xl md:text-4xl font-black text-primary mb-6">Unsere {{$supportersTotal}} Unterstützer:innen</h2>
             <x-testimonials />
             <x-organizations />
             <x-prime-supporters />
