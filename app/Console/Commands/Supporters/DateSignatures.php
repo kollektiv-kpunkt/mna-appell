@@ -28,7 +28,7 @@ class DateSignatures extends Command
     public function handle()
     {
         $firstSignature = \App\Models\Supporter::orderBy('created_at', "ASC")->first()->created_at;
-        $carbonDate = \Carbon\Carbon::parse($firstSignature);
+        $carbonDate = \Carbon\Carbon::parse($firstSignature)->startOfDay();
         $carbonDateNow = \Carbon\Carbon::now();
         $dates = [];
         while ($carbonDate <= $carbonDateNow) {
