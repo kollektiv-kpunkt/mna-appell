@@ -23,7 +23,7 @@ plot <- ggplot(df_dates, aes(x = date, y = signatures)) +
     geom_bar(stat = "identity", fill = "blue", show.legend = TRUE) +
     geom_line(aes(y = cumsum), color = "red", show.legend = TRUE) +
     labs(
-        title = paste0("State of Signatures: ", format(Sys.Date(), "%Y-%m-%d")), "_", format(Sys.time(), "%H:%M:%S"),
+        title = paste0("State of Signatures: ", format(Sys.Date(), "%Y-%m-%d"), "_", format(Sys.time(), "%H:%M:%S")),
         x = "Date",
         y = "Number of signatures"
     ) +
