@@ -23,6 +23,6 @@ plot <- ggplot(df_dates, aes(x = date, y = signatures)) +
     scale_fill_identity(name = "Test", guide = "legend", labels = c("m1"))
 
 ## Save the plot to a file named according to the current date
-filename <- paste0("public/plots/plot-", format(Sys.Date(), "%Y-%m-%d"), "_", format(Sys.time(), "%H-%M-%S"), ".png")
+filename <- paste0("../public/plots/plot-", format(Sys.Date(), "%Y-%m-%d"), "_", format(Sys.time(), "%H-%M-%S"), ".png")
 ggsave(plot, filename = filename, width = 10, height = 7.5, dpi = 300)
-ggsave(plot, filename = "public/plots/plot-latest.png", width = 10, height = 7.5, dpi = 300)
+ggsave(plot, filename = "../public/plots/plot-latest.png", width = 10, height = 7.5, dpi = 300)
