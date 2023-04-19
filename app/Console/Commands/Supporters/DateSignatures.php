@@ -29,8 +29,9 @@ class DateSignatures extends Command
     {
         $firstSignature = \App\Models\Supporter::orderBy('created_at', "ASC")->first()->created_at;
         $carbonDate = \Carbon\Carbon::parse($firstSignature);
+        $carbonDateNow = \Carbon\Carbon::now();
         $dates = [];
-        while ($carbonDate->isBefore(now())) {
+        while ($carbonDate <= $carbonDateNow) {
             $signaturesCountForDay = \App\Models\Supporter::whereDate('created_at', $carbonDate->toDateString())->count();
             $dates[] = [
                 'date' => $carbonDate->toDateString(),
