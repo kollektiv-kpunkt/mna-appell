@@ -39,12 +39,12 @@ class DateSignatures extends Command
             ];
             $carbonDate->addDay();
         }
-        $date = \Carbon\Carbon::now()->format('Y-m-d');
-        $filepath = "supporters/date-signatures-{$date}.csv";
+        $filepath = "supporters/date-signatures.csv";
         $csv = \League\Csv\Writer::createFromFileObject(new \SplTempFileObject());
         $csv->insertOne(['date', 'signatures']);
         $csv->insertAll($dates);
         \Illuminate\Support\Facades\Storage::drive('local')->put($filepath, $csv->toString());
+        shell_exec("Rscript " . base_path() . "dataviz/plots.R");
         return Command::SUCCESS;
     }
 }
