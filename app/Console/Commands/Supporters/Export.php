@@ -33,6 +33,9 @@ class Export extends Command
             case 'csv':
                 $this->exportToCsv($path);
                 break;
+            case 'md':
+                $this->exportToMarkdown($path);
+                break;
             default:
                 $this->error('Format not supported.');
                 return Command::FAILURE;
@@ -56,5 +59,28 @@ class Export extends Command
         }
         $date = \Carbon\Carbon::now()->format('Y-m-d');
         file_put_contents("{$path}-{$date}.csv", $csv->toString());
+    }
+
+
+    /**
+     * Export unique Supporters to a Markdown Table
+     */
+
+    protected function exportToMarkdown(string $path)
+    {
+        $supporters = \App\Models\Supporter::select('id', "name", "email", "city", "zip", "details", "public")->groupBy('email')->get();
+        $md = "| name | zip | details |" . PHP_EOL;
+        $md .= "|----:|----:|--------:|" . PHP_EOL;
+        foreach ($supporters as $supporter) {
+            $fields = [
+                "name" => $supporter->name,
+                "zip" => $supporter->public ? $supporter->zip : "",
+                "details" => $supporter->details ? $supporter->details : "",
+            ];
+            $md .= "| " . implode(" | ", $fields) . " |";
+            $md .= PHP_EOL;
+        }
+        $date = \Carbon\Carbon::now()->format('Y-m-d');
+        file_put_contents("{$path}-{$date}.md", $md);
     }
 }
