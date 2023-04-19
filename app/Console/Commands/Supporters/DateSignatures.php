@@ -44,7 +44,7 @@ class DateSignatures extends Command
         $csv->insertOne(['date', 'signatures']);
         $csv->insertAll($dates);
         \Illuminate\Support\Facades\Storage::drive('local')->put($filepath, $csv->toString());
-        shell_exec("Rscript " . base_path() . "dataviz/plots.R");
+        $output = shell_exec("Rscript " . __DIR__ . "/../../../../dataviz/plots.R");
         return Command::SUCCESS;
     }
 }
